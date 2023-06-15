@@ -1,2 +1,15 @@
+env: prod
 component: user
 params: "DOCUMENTDB:prod.user.mongo,REDIS_HOST:prod.elasticache.endpoint,MONGO_URL:prod.docdb.user.url"
+
+schemaLoadJob:
+  create: true
+  type: mongo
+
+resources:
+   limits:
+     cpu: 300m
+     memory: 350Mi
+   requests:
+     cpu: 200m
+     memory: 256Mi
